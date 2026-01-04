@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Andrey portella</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container header-container">
+            <button class="mobile-menu-btn" aria-label="Abrir Menu">
+                <i class="ph ph-list"></i>
+            </button>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#about" class="nav-link">Sobre</a></li>
+                    <li><a href="#projects" class="nav-link">Projetos</a></li>
+                    <li><a href="#contact" class="nav-link btn-highlight">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-layout">
+                    <div class="hero-text-group">
+                        <h1 class="hero-name">Andrey <span class="text-gradient">Portella</span></h1>
+                        <p class="hero-subtitle">
+                            Desenvolvedor Front-End com maior domínio no visual e na experiência do usuário,
+                            além de conhecimentos em Back-End e banco de dados.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-profile-wrapper">
+                        <img src="img/perf.jpeg" alt="Andrey Portella" class="hero-profile-pic">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section bg-alt">
+            <div class="container">
+                <h2 class="section-title">Sobre Mim</h2>
+
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            Sou <strong>Andrey Portella</strong>, apaixonado por tecnologia e residente em Curitiba –
+                            PR.
+                            Com foco principal em <span>desenvolvimento Front-end</span>, busco criar interfaces que
+                            não apenas impressionam visualmente, mas entregam uma experiência de usuário impecável.
+                        </p>
+
+                        <p>
+                            Minha base técnica sólida em <strong>HTML, CSS e JavaScript</strong> se expande para o
+                            ecossistema
+                            moderno com <span>React</span> e <span>Node.js</span>. Além disso, possuo compreensão de
+                            arquiteturas
+                            completas, lidando com <span>integração de APIs</span> e bancos de dados como
+                            <span>MongoDB</span>.
+                        </p>
+
+                        <p>
+                            Com experiência prévia de <strong>1 ano e 6 meses em infraestrutura de TI</strong>,
+                            desenvolvi uma
+                            visão analítica para resolução de problemas e manutenção de sistemas corporativos, o que me
+                            torna um desenvolvedor atento à performance e escalabilidade.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section bg-alt">
+            <div class="container">
+                <h2 class="section-title">Meus Projetos</h2>
+
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="img/project1.PNG" alt="Site Profissional para Advogada">
+                        </div>
+
+                        <div class="project-info">
+                            <h3>Site Profissional para Advogada</h3>
+                            <p>
+                                Desenvolvida para uma advogada, com design moderno, layout responsivo
+                                e foco em credibilidade e conversão de clientes.
+                            </p>
+
+                            <div class="project-links">
+                                <a href="https://karina-landingpage.vercel.app/">Demo <i
+                                        class="ph ph-arrow-up-right"></i></a>
+                                <a href="https://github.com/portellaandrey/karina-landingpage">GitHub <i
+                                        class="ph ph-github-logo"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="img-placeholder"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Dashboard Admin</h3>
+                            <p>Painel administrativo com tema dark.</p>
+                            <div class="project-links">
+                                <a href="#">Demo <i class="ph ph-arrow-up-right"></i></a>
+                                <a href="#">GitHub <i class="ph ph-github-logo"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="img-placeholder"></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>App de Tarefas</h3>
+                            <p>SPA em JavaScript puro com LocalStorage.</p>
+                            <div class="project-links">
+                                <a href="#">Demo <i class="ph ph-arrow-up-right"></i></a>
+                                <a href="#">GitHub <i class="ph ph-github-logo"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container contact-container">
+                <h2 class="section-title">Entre em Contato</h2>
+
+                <a href="https://wa.me/5500999999999" target="_blank" class="btn btn-primary">
+                    <i class="ph ph-whatsapp-logo"></i> WhatsApp
+                </a>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/andrey-portella-35ba21371/"><i
+                            class="ph ph-linkedin-logo"></i></a>
+                    <a href="https://github.com/portellaandrey"><i class="ph ph-github-logo"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Desenvolvido por <strong>Seu Nome</strong></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

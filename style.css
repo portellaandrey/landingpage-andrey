@@ -1,0 +1,570 @@
+:root {
+    --primary-color: #8b5cf6;
+    --primary-hover: #7c3aed;
+    --bg-color: #0f0f12;
+    --bg-alt: #18181b;
+    --text-color: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --border-color: #27272a;
+
+    --header-height: 80px;
+    --container-width: 1120px;
+    --border-radius: 12px;
+
+    --font-main: 'Inter', sans-serif;
+    --font-display: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #a78bfa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: rgba(15, 15, 18, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        justify-content: flex-end; /* No celular, volta para a ponta para dar espaço ao menu hambúrguer */
+        padding: 0 20px;
+    }
+}
+.header-container {
+    display: flex;
+    justify-content: center; /* Centraliza o menu horizontalmente */
+    align-items: center;
+    position: relative; /* Necessário para o botão mobile ficar na ponta se precisar */
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.dev-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+.dev-role {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 40px; /* Aumentei um pouco o espaço entre os links para ficar mais elegante */
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.tech-ticker {
+    width: 100%;
+    overflow: hidden;
+    padding: 5px 0; /* Reduzido de 10px para 5px */
+    margin-bottom: 20px; /* Reduzido para aproximar mais do nome */
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+.ticker-wrapper {
+    display: flex;
+    width: fit-content;
+    animation: ticker-animation 30s linear infinite;
+}
+
+.ticker-content {
+    display: flex;
+    gap: 30px; /* Logos mais próximas para combinar com o tamanho menor */
+    padding-right: 30px;
+    align-items: center;
+}
+
+.ticker-content i {
+    font-size: 1.2rem; /* Reduzido de 1.8rem para 1.2rem (bem pequeno e elegante) */
+    color: var(--primary-color);
+    opacity: 0.4; /* Um pouco mais transparente para não distrair */
+    transition: 0.3s ease;
+}
+
+/* Quando passar o mouse, ela brilha e volta para 100% de cor */
+.ticker-content i:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 5px var(--primary-color));
+}
+
+@keyframes ticker-animation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.btn-highlight {
+    padding: 8px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    color: var(--primary-color);
+}
+
+.btn-highlight:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Container principal da Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; /* Centraliza verticalmente */
+    padding-top: 0; /* Removemos o padding para subir mais o conteúdo */
+    margin-top: -50px; /* Força o conteúdo para cima conforme seu pedido */
+}
+
+.hero-content {
+    width: 100%;
+    max-width: var(--container-width);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Garante que a ticker e o layout fiquem no meio */
+}
+
+/* Ajuste no Layout para PC */
+.hero-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conjunto nome/foto na tela */
+    gap: 60px; /* Espaço fixo entre texto e imagem */
+    width: 100%;
+    text-align: left; /* O texto dentro do grupo continua alinhado à esquerda */
+}
+
+/* Garante que o texto ocupe um espaço definido */
+.hero-text-group {
+    flex: 0 1 auto; /* Ocupa apenas o espaço necessário */
+    max-width: 550px; /* Limita a largura para o subtítulo não espalhar */
+}
+
+/* Ajuste Proporcional da Foto */
+.hero-profile-pic {
+    width: 180px !important; 
+    height: 180px !important;
+    flex-shrink: 0;          /* Impede que a foto amasse em telas médias */
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    object-fit: cover;
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
+}
+
+/* Grupo do Nome e Subtítulo */
+.hero-text-group {
+    flex: 1;
+    max-width: 600px; /* Impede que o texto se espalhe demais */
+}
+
+/* --- ESTILIZAÇÃO DO NOME --- */
+.hero-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem !important; /* Aumentei para dar mais impacto visual */
+    font-weight: 800;             /* Peso extra-bold para um look moderno */
+    letter-spacing: -0.04em;     /* Letras levemente juntas para um visual premium */
+    line-height: 1.1;
+    margin-bottom: 12px !important;
+    color: #ffffff;
+    display: block;
+}
+
+/* --- ESTILIZAÇÃO DO SUBTÍTULO --- */
+.hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;           /* Tamanho equilibrado para leitura */
+    font-weight: 400;             /* Fonte mais leve para contrastar com o nome */
+    line-height: 1.6;             /* Mais espaço entre linhas para não cansar a vista */
+    color: #a1a1aa;               /* Cinza suave (Zinc-400) que é tendência em Dark Mode */
+    max-width: 520px;             /* Mantém o texto em um bloco fácil de ler */
+    margin-bottom: 30px !important;
+    letter-spacing: -0.01em;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #fff 30%, var(--primary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(167, 139, 250, 0.3)); /* Brilho sutil no roxo */
+}
+
+/* Foto de Perfil */
+.hero-profile-pic {
+    width: 190px !important; 
+    height: 190px !important;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: flex-start; 
+}
+
+/* Ajuste para Celular: No mobile volta a ser tudo centralizado */
+@media (max-width: 768px) {
+    .hero-layout {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-text-group {
+        max-width: 100%;
+    }
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.bg-alt {
+    background-color: var(--bg-alt);
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+.greeting {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.btn {
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Container do conteúdo para dar um respiro visual */
+.about-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.about-text {
+    max-width: 850px; /* Um pouco mais largo para parágrafos não ficarem tão altos */
+    text-align: justify; /* Alinhamento justificado para blocos de texto profissionais */
+    line-height: 1.8; /* Aumenta o espaçamento entre linhas (essencial para leitura) */
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Espaçamento entre os parágrafos */
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+/* Destaque para palavras-chave (Efeito de tecnologia) */
+.about-text span {
+    color: var(--primary-color); /* O roxo da sua paleta */
+    font-weight: 600;
+    background: rgba(139, 92, 246, 0.1); /* Um fundo roxo bem sutil */
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Destaque forte para seu nome e tempos de experiência */
+.about-text strong {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+/* Ajuste para Mobile */
+@media (max-width: 768px) {
+    .about-text {
+        text-align: left; /* No mobile, o justificado pode criar espaços estranhos */
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
+
+.tech-stack {
+    margin-top: 2rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tags span {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.project-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #18181b, #27272a);
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 16px;
+}
+
+.project-links a {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.contact-container {
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+footer {
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background-color: var(--bg-color);
+        transition: height 0.3s ease;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-menu.active {
+        height: 240px;
+    }
+
+    .btn-highlight {
+        border: none;
+        padding: 0;
+    }
+}
